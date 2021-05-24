@@ -1,7 +1,14 @@
-<ol class="post-list">
+<ul class="post-list">
     {{#each posts as |post|}}
     <li>
-        {{> post-info post}}
+        <article class="post">
+            <div class="title">
+                <a href="/post/{{id}}" target="_blank">{{title}}</a>
+            </div>
+            <div class="meta">
+                Posted on {{format_date created_at}}
+            </div>
+        </article>
     </li>
     {{/each}}
-</ol>
+</ul>

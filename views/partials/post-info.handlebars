@@ -9,5 +9,7 @@
         Posted by {{user.username}} on {{format_date created_at}}
         |  
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+        |
+        <a type="button" href="/add-comment/post/{{id}}">&#43; add comment</a>
     </div>
 </article>
