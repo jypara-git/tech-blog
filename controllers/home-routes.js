@@ -3,6 +3,10 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect("login");
+        return;
+    } 
     Post.findAll({
         order: [['created_at', 'DESC']],
         attributes: [
@@ -57,6 +61,10 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/post/:id', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect("login");
+        return;
+    } 
     Post.findOne({
         where: {
             id: req.params.id
@@ -102,6 +110,10 @@ router.get('/post/:id', (req, res) => {
 });
 
 router.get('/add-comment/post/:id', withAuth, (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect("login");
+        return;
+    } 
     Post.findOne({
         where: {
             id: req.params.id

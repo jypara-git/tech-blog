@@ -3,13 +3,13 @@
         <a href="/post/{{id}}" target="_blank">{{title}}</a>
     </div>
     <div class="meta">
-        <p>{{post-content}}</p>
+        <p>{{post_content}}</p>
     </div>
     <div class="meta">
         Posted by {{user.username}} on {{format_date created_at}}
         |  
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-        |
-        <a type="button" href="/add-comment/post/{{id}}">&#43; add comment</a>
+        
     </div>
 </article>
+
