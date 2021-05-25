@@ -11,7 +11,7 @@
   ## Usage
   In order to use this app, please install Node.js and run the following commands in the terminal
   ```bash
-  git clone https://github.com/jypara-git/tech-blog
+  git clone https://github.com/jypara-git/tech-blog.git
   npm install 
   npm start
   ```
